@@ -1,0 +1,9 @@
+{
+  "name": "event-manager",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "pro_id": "62564974",
+  "id": "62564974"
+}

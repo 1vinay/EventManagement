@@ -1,0 +1,6 @@
+{
+  "appId": "com.vinay.eventManager",
+  "appName": "event-manager",
+  "bundledWebRuntime": false,
+  "webDir": "www"
+}

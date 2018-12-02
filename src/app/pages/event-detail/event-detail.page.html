@@ -1,0 +1,75 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>event-detail</ion-title>
+	<ion-buttons slot="start">
+<ion-back-button></ion-back-button>
+</ion-buttons>
+<ion-title>{{currentEvent?.name}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+<ion-card class="add-guest-form">
+<ion-card-header>
+Add Guests
+</ion-card-header>
+<ion-card-content>
+<ion-item>
+<ion-label stacked>Name</ion-label>
+<ion-input [(ngModel)]="guestName" type="text"
+placeholder="What's your guest's name?"></ion-input>
+</ion-item>
+<ion-button color="primary" expand="block" (click)="addGuest(guestName)"
+[disabled]="!guestName">
+Add Guest
+</ion-button>
+</ion-card-content>
+</ion-card>
+<ion-card>
+<ion-card-header>
+Event's Revenue:
+<span [class.profitable]="currentEvent?.revenue > 0"
+[class.no-profit]="currentEvent?.revenue < 0 ">
+{{currentEvent?.revenue | currency}}
+</span>
+</ion-card-header>
+<ion-card-content>
+<p>Ticket:
+<strong>${{currentEvent?.price}}</strong>
+</p>
+<p>Date:
+<strong>{{currentEvent?.date}}</strong>
+</p>
+</ion-card-content>
+</ion-card>
+
+<ion-card class="add-guest-form">
+<ion-card-header>
+Add Guests
+</ion-card-header>
+<ion-card-content>
+<ion-row>
+<ion-col size="8">
+<ion-item>
+<ion-label stacked>Name</ion-label>
+<ion-input [(ngModel)]="guestName" type="text"
+placeholder="What's your guest's name?"></ion-input>
+</ion-item>
+</ion-col>
+<ion-col size="4">
+<ion-button (click)="takePicture()">
+<ion-icon slot="icon-only" name="camera"></ion-icon>
+</ion-button>
+</ion-col>
+</ion-row>
+<span *ngIf="guestPicture">Picture taken!</span>
+<ion-button color="primary" expand="block" (click)="addGuest(guestName)"
+[disabled]="!guestName">
+Add Guest
+</ion-button>
+</ion-card-content>
+</ion-card>
+
+
+
+</ion-content>
